@@ -8,7 +8,7 @@ class RecipeCard extends HTMLElement {
 
     // EXPOSE - START (All expose numbers start with A)
     // A1. TODO - Attach the shadow DOM to this Web Component (leave the mode open)
-    const shadow = this.attachShadow({ mode: "open" });
+    const shadow = this.attachShadow({ mode: "open" });//const shadowOpen = elementRef.attachShadow({ mode: "open" });
     // A2. TODO - Create an <article> element - This will hold our markup once our data is set
     const article = document.createElement("article");
     // A3. TODO - Create a style element - This will hold all of the styles for the Web Component
@@ -121,7 +121,7 @@ class RecipeCard extends HTMLElement {
     if (!data) return;
 
     // A6. TODO - Select the <article> we added to the Shadow DOM in the constructor
-    const article = this.getAttribute("article");
+    const article = this.shadowRoot.querySelector("article");
     // A7. TODO - Set the contents of the <article> with the <article> template given in
     //           cardTemplate.html and the data passed in (You should only have one <article>,
     //           do not nest an <article> inside another <article>). You should use Template
